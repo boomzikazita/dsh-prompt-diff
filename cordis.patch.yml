@@ -1,0 +1,11 @@
+# dsh-prompt-diff bundle patch — ③ world-state diff 注入
+- insert:
+    - id: prompt-diff
+      name: 'dsh-prompt-diff'
+      config:
+        # 状态文件（per-session hash 表，跨轮持久）
+        stateFile: '~/.dsh/prompt-diff/state.json'
+        # 只对超过该字符数的块做 diff（小快不折腾）
+        minChars: 500
+        # 永不 diff 的块名关键词（核心规则块必须每轮完整可见）
+        skipNames: ['persona', 'harness:identity', 'instructions']

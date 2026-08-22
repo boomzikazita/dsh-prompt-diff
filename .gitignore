@@ -1,0 +1,11 @@
+node_modules/
+__pycache__/
+*.pyc
+*.bak
+*.bak-*
+*.bak_*
+*.tmp
+usage.json
+pnpm-lock.yaml
+seeds/
+.DS_Store
