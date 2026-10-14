@@ -1,11 +1,23 @@
 {
   "name": "dsh-prompt-diff",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "main": "index.js",
-  "description": "③ world-state diff 注入：system-prompt/assemble 钩子对大块上下文做 hash+diff，未变只注入一行缩略（借鉴 codex world_state render_diff）",
+  "description": "③ world-state diff 注入：system-prompt/assemble 钩子对大块上下文做 hash+diff，未变只注入一行缩略。v0.2.0：适配 dsh 0.2（Config 不导出）；state.json 只保留最近 keepSessions(50) 个 session；并入 cost_audit 工具（自 dsh-skill-lazy 迁入，工具名不变）。",
   "dependencies": {},
+  "peerDependencies": {
+    "@deepseek-ai/dsh": "*",
+    "@deepseek-ai/dsh-tools": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    }
+  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"

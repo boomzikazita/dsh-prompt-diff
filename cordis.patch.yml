@@ -1,4 +1,6 @@
-# dsh-prompt-diff bundle patch — ③ world-state diff 注入
+# dsh-prompt-diff bundle patch — ③ world-state diff 注入 + cost_audit
+# v0.2.0（2026-10-14）：state.json 只保留最近 keepSessions 个 session id；
+# cost_audit 工具自 dsh-skill-lazy 并入（token 成本审计）
 - insert:
     - id: prompt-diff
       name: 'dsh-prompt-diff'
@@ -7,5 +9,7 @@
         stateFile: '~/.dsh/prompt-diff/state.json'
         # 只对超过该字符数的块做 diff（小快不折腾）
         minChars: 500
+        # state.json 清理：只保留最近 N 个 session id
+        keepSessions: 50
         # 永不 diff 的块名关键词（核心规则块必须每轮完整可见）
         skipNames: ['persona', 'harness:identity', 'instructions']
