@@ -1,10 +1,10 @@
 {
   "name": "dsh-prompt-diff",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "main": "index.js",
-  "description": "③ world-state diff 注入：system-prompt/assemble 钩子对大块上下文做 hash+diff，未变只注入一行缩略。v0.2.0：适配 dsh 0.2（Config 不导出）；state.json 只保留最近 keepSessions(50) 个 session；并入 cost_audit 工具（自 dsh-skill-lazy 迁入，工具名不变）。",
+  "description": "③ world-state diff 注入：system-prompt/assemble 钩子对大块上下文做 hash+diff，未变只注入一行缩略。v0.2.0：适配 dsh 0.2；state.json 只保留最近 keepSessions(50) 个 session；并入 cost_audit 工具。v0.2.1：修正 waterfall 契约——cordis 的 next() 不接收参数，原 next(transformed) 使 diff 注入全程为 no-op（改为 await next() 后返回变换结果）；cost_audit 默认插件目录改为自动探测（原 ~/.dsh/plugins 无源码致恒报 0=假阴性）、三参数改可选、skill 目录为空时如实报未计量。",
   "dependencies": {},
   "peerDependencies": {
     "@deepseek-ai/dsh": "*",
